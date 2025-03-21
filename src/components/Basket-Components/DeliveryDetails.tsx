@@ -28,12 +28,12 @@ export default function DeliveryDetails({
 		>
 			<div className="mb-[5.7rem] w-full">
 				{/* Header */}
-				<div className="flex justify-between items-center w-full h-10 py-8 px-3">
+				<div className="flex justify-between items-center w-full h-10 py-10 px-3">
 					<div
 						onClick={() => setIsDeliveryPageOpen(false)}
 						className="flex items-center cursor-pointer"
 					>
-						<FaChevronLeft className="size-6" />
+						<FaChevronLeft className="size-5" />
 						<span className="pl-2 font-semibold">Back</span>
 					</div>
 

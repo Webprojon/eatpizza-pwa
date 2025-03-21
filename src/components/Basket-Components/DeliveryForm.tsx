@@ -115,7 +115,7 @@ export default function DeliveryForm({
 					<button
 						disabled={!token}
 						onClick={handleTestNotification}
-						className="w-full self-start bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-md transition-all
+						className="w-full self-start bg-gradient-green font-semibold tracking-wider text-white p-3 rounded-md transition-all
 					mt-[1.5rem]"
 					>
 						Confirm Orders
