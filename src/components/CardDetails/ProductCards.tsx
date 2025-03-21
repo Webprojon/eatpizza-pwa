@@ -5,11 +5,11 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { fadeInAnimationsVariants } from "@/lib/motion-anim";
 import { motion } from "framer-motion";
 import { IoSearchOutline } from "react-icons/io5";
-import { Products } from "@prisma/client";
+import { Product } from "@prisma/client";
 import { useGlobalContext } from "@/context/global-context";
 import AddToCart from "./AddToCart";
 
-export default function ProductCards({ products }: { products: Products[] }) {
+export default function ProductCards({ products }: { products: Product[] }) {
 	const [items, setItems] = useState(products);
 	const { selectValue, setSelectValue } = useGlobalContext();
 	const [searchValue, setSearchValue] = useState<string>("");
