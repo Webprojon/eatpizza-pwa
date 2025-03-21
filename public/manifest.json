@@ -1,0 +1,27 @@
+{
+	"name": "Eat Pizza",
+	"short_name": "Eat Pizza",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"orientation": "any",
+	"scope": "/",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "icons/EatPizza-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "icons/EatPizza-256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "icons/EatPizza-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}

@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+@layer utilities {
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.animate-spin-25s {
+		animation: spin 25s linear infinite;
+	}
+
+	.animate-spin-17s {
+		animation: spin 17s linear infinite;
+	}
+
+	.animate-spin-3s {
+		animation: spin 4s linear infinite;
+	}
+
+	.animate-spin-1s {
+		animation: spin 0.65s linear infinite;
+	}
+}
+
+.bg-gradient-green {
+	--gradient-color-from: #22c55e;
+	--gradient-color-to: #16a34a;
+	background-image: linear-gradient(
+		to right,
+		var(--gradient-color-from),
+		var(--gradient-color-to)
+	);
+}
+
+.bg-gradient-green-hover:hover {
+	--gradient-color-from: #16a34a;
+	--gradient-color-to: #22c55e;
+}
+
+.bg-gradient-red {
+	--gradient-color-from: #f87171;
+	--gradient-color-to: #dc2626;
+	background-image: linear-gradient(
+		to right,
+		var(--gradient-color-from),
+		var(--gradient-color-to)
+	);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+	width: 0rem;
+}
+
+html::-webkit-scrollbar-thumb {
+	background-color: #16a34a;
+}
