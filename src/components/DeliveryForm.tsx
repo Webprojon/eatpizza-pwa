@@ -1,5 +1,5 @@
 "use client";
-import { Basket, OrderedItems } from "@prisma/client";
+import { Basket, OrderedItem } from "@prisma/client";
 import Inputs from "./Inputs";
 import { submitOrders } from "@/actions/actions";
 import { useState } from "react";
@@ -11,7 +11,7 @@ export default function DeliveryForm({
 	orderedItems,
 }: {
 	basketItems: Basket[];
-	orderedItems: OrderedItems[];
+	orderedItems: OrderedItem[];
 }) {
 	const { token } = useFcmToken();
 	const [userName, setUserName] = useState("");
