@@ -15,17 +15,22 @@
 		"@kinde-oss/kinde-auth-nextjs": "^2.5.3",
 		"@reduxjs/toolkit": "^2.2.3",
 		"clsx": "^2.1.1",
+		"db": "^6.0.3",
 		"dotenv": "^16.4.7",
 		"firebase": "^11.3.1",
 		"firebase-admin": "^13.1.0",
 		"framer-motion": "^11.0.5",
+		"generate": "^0.14.0",
 		"next": "^15.1.7",
 		"next-pwa": "^5.6.0",
+		"npx": "^10.2.2",
+		"push": "^0.1.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"react-hot-toast": "^2.4.1",
 		"react-icons": "^5.2.1",
-		"react-redux": "^9.1.1"
+		"react-redux": "^9.1.1",
+		"seed": "^0.4.4"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
