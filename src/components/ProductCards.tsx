@@ -5,10 +5,10 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { fadeInAnimationsVariants } from "@/lib/motion-anim";
 import { motion } from "framer-motion";
 import { IoSearchOutline } from "react-icons/io5";
-import AddToCart from "./AddToCart";
-import { Products } from "@prisma/client";
+import { Product } from "@prisma/client";
+import AddToCart from "./CardDetails/AddToCart";
 
-export default function ProductCards({ products }: { products: Products[] }) {
+export default function ProductCards({ products }: { products: Product[] }) {
 	const [items, setItems] = useState(products);
 	const [selectValue, setSelectValue] = useState<string>("all");
 	const [searchValue, setSearchValue] = useState<string>("");
@@ -25,7 +25,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 			return selectValue in categories
 				? products.filter(
 						(product) => product.itemCategory === categories[selectValue],
-				  )
+					)
 				: products;
 		};
 

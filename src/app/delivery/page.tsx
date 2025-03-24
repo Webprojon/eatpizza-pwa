@@ -10,7 +10,7 @@ import DeliveryForm from "@/components/DeliveryForm";
 
 export default async function Delivery() {
 	const basketItems = await prisma.basket.findMany();
-	const orderedItems = await prisma.orderedItems.findMany();
+	const orderedItems = await prisma.orderedItem.findMany();
 
 	return (
 		<div className="md:h-[calc(100vh-11vh)] bg-slate-100 dark:bg-black/40 max-w-[1250px] mx-auto font-semibold tracking-wider rounded-md">
