@@ -34,12 +34,12 @@ export default function DeliveryForm({
 		try {
 			await submitOrders(basketItems, formData);
 			setTimeout(() => {
-				setIsDeliveryPageOpen(!isDeliveryPageOpen)
-			}, 1300)
+				setIsDeliveryPageOpen(!isDeliveryPageOpen);
+			}, 1200);
 
 			setTimeout(() => {
-				handleSendNotification()
-			}, 1600)
+				handleSendNotification();
+			}, 1400);
 		} catch (error) {
 			console.error("Error submitting order:", error);
 		}
@@ -70,7 +70,10 @@ export default function DeliveryForm({
 				Contact information
 			</h2>
 
-			<form onSubmit={handleSubmitOrders} className="relative flex flex-col gap-y-4">
+			<form
+				onSubmit={handleSubmitOrders}
+				className="relative flex flex-col gap-y-4"
+			>
 				<div className="flex flex-col md:flex-row gap-6">
 					<Inputs
 						name="username"
