@@ -4,7 +4,7 @@ import {
 	LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import Image from "next/image";
-import userImg from "../../../public/general-imgs/manimg.webp";
+import noAvatar from "../../../public/general-imgs/noAvatar.png";
 
 export default async function Profile() {
 	const { getUser } = getKindeServerSession();
@@ -27,7 +27,7 @@ export default async function Profile() {
 				<>
 					<div className="flex flex-col gap-y-3 mb-6">
 						<Image
-							src={(user && user.picture) || userImg}
+							src={(user && user.picture) || noAvatar}
 							width={200}
 							height={200}
 							alt="user img"

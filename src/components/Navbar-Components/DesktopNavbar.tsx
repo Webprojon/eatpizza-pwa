@@ -2,7 +2,7 @@ import NavbarLogo from "./NavbarLogo";
 import ThemeIcons from "./ThemeIcons";
 import TabletNavbar from "./TabletNavbar";
 import MobileNavbar from "./MobileNavbar";
-import userImg from "../../../public/general-imgs/manimg.webp";
+import noAvatar from "../../../public/general-imgs/noAvatar.png";
 import Image from "next/image";
 import MobileBasket from "../Basket-Components/MobileBasket";
 import SelectCategory from "./SelectCategory";
@@ -51,11 +51,11 @@ export default async function DesktopNavbar() {
 						{user && (
 							<Link href="/profile" className="hidden sm:block">
 								<Image
-									src={user?.picture || userImg}
-									width={200}
-									height={200}
-									alt="user img"
-									className="w-9 h-9 rounded-full object-cover"
+									src={user?.picture || noAvatar}
+									width={100}
+									height={100}
+									alt="image"
+									className="w-9 border h-9 rounded-full object-cover"
 								/>
 							</Link>
 						)}
