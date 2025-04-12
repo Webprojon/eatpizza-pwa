@@ -2,9 +2,9 @@
 import { Basket, OrderedItem } from "@prisma/client";
 import { submitOrders } from "@/actions/actions";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import useFcmToken from "@/hooks/useFcmToken";
 import Inputs from "../Inputs";
+import { useGlobalContext } from "@/context/global-context";
 
 export default function DeliveryForm({
 	basketItems,
@@ -19,9 +19,9 @@ export default function DeliveryForm({
 	const [userStreet, setUserStreet] = useState("");
 	const [userFlatNumber, setUserFlatNumber] = useState("");
 	const [userFloorNumber, setUserFloorNumber] = useState("");
-	const router = useRouter();
+	const { isDeliveryPageOpen, setIsDeliveryPageOpen } = useGlobalContext();
 
-	const handleAddItem = async (e: React.FormEvent) => {
+	const handleSubmitOrders = async (e: React.FormEvent) => {
 		e.preventDefault();
 		const formData = {
 			userName,
@@ -33,13 +33,19 @@ export default function DeliveryForm({
 
 		try {
 			await submitOrders(basketItems, formData);
-			router.push("/");
+			setTimeout(() => {
+				setIsDeliveryPageOpen(!isDeliveryPageOpen)
+			}, 1300)
+
+			setTimeout(() => {
+				handleSendNotification()
+			}, 1600)
 		} catch (error) {
 			console.error("Error submitting order:", error);
 		}
 	};
 
-	const handleTestNotification = async () => {
+	const handleSendNotification = async () => {
 		const response = await fetch("/send-notification", {
 			method: "POST",
 			headers: {
@@ -64,7 +70,7 @@ export default function DeliveryForm({
 				Contact information
 			</h2>
 
-			<form onSubmit={handleAddItem} className="relative flex flex-col gap-y-4">
+			<form onSubmit={handleSubmitOrders} className="relative flex flex-col gap-y-4">
 				<div className="flex flex-col md:flex-row gap-6">
 					<Inputs
 						name="username"
@@ -114,7 +120,6 @@ export default function DeliveryForm({
 				<div className="flex gap-4 md:self-end">
 					<button
 						disabled={!token}
-						onClick={handleTestNotification}
 						className="w-full self-start bg-gradient-green font-semibold tracking-wider text-white p-3 rounded-md transition-all
 					mt-[1.5rem]"
 					>
